@@ -1,0 +1,8 @@
+---
+# Private Automation Hub
+ee_registry_dest: automation-hub-test.example.com
+ee_registry_username: admin
+ee_registry_password:
+
+ee_ah_host: automation-hub-test.example.com
+ee_ah_token:

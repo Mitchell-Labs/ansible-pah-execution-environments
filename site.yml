@@ -1,0 +1,25 @@
+---
+- name: PAH - Execution Environments
+  hosts: server01
+  gather_facts: true
+  environment:
+    PATH: /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
+
+  vars_files:
+    - "vars/{{ aap_environment }}.yml"
+    - vars/rh_registry.yml
+    - vars/ee.yml
+
+  pre_tasks:
+    - name: Install Podman
+      ansible.builtin.yum:
+        name: podman
+
+    - name: Install ansible-builder with pip
+      ansible.builtin.pip:
+        name:
+          - ansible
+          - ansible-builder
+
+  roles:
+    - infra.ee_utilities.ee_builder

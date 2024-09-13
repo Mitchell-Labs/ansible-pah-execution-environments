@@ -1,0 +1,5 @@
+---
+collections:
+  - name: infra.ee_utilities
+  - name: ansible.controller
+  - name: containers.podman
